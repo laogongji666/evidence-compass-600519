@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="证据罗盘：用可核验的公开财报理解贵州茅台经营表现。" />
+  <title>证据罗盘｜贵州茅台诊断</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-icon">◈</span><div><strong>证据罗盘</strong><small>EVIDENCE COMPASS</small></div></div>
+      <div class="side-label">研究工作台</div>
+      <a href="#overview" class="nav active">▦ <span>诊断概览</span></a>
+      <a href="#evidence" class="nav">▤ <span>证据清单</span></a>
+      <a href="#method" class="nav">◎ <span>方法与边界</span></a>
+      <div class="side-bottom"><span class="pulse"></span> 公开财报样例 · 2026-10-12<br><small>单股 MVP · 研究辅助</small></div>
+    </aside>
+
+    <main>
+      <header class="topbar"><span>单股诊断 <span class="slash">/</span> 贵州茅台</span><span class="topright">数据截止：2026 半年报 <span class="avatar">研</span></span></header>
+      <div class="content" id="overview">
+        <div class="eyebrow">COMPANY INTELLIGENCE / 001</div>
+        <div class="hero-row"><div><div class="ticker">600519.SH <span>上交所 · 白酒</span></div><h1>贵州茅台<span class="h1-mark"> / 证据诊断</span></h1><p class="subtitle">从财报数字出发，辨别经营表现、解释边界和仍需验证的问题。</p></div><div class="asof"><span>分析时点</span><strong>2026.10.12</strong><small>最新已纳入：2026 半年度报告</small></div></div>
+
+        <div class="notice"><span class="notice-icon">i</span><div><strong>这份诊断聚焦证据，不给出投资评级。</strong><span>下方每个数字均可回到报告原文。当前未接入实时行情、同行数据库及事件流，对应维度明确标记为“待验证”。</span></div></div>
+
+        <section class="section-head"><div><span class="section-kicker">01 / ASK</span><h2>你想核查什么？</h2></div><span class="section-hint">输入问题后，系统按证据主题匹配已有材料</span></section>
+        <div class="ask-panel"><div class="ask-input-wrap"><span class="spark">✦</span><input id="question" aria-label="输入研究问题" value="现金流改善能否说明经营变好？" placeholder="例如：利润和收入为什么走势不同？" /><button id="askBtn">分析证据 <span>↗</span></button></div><div class="chips"><button data-q="现金流改善能否说明经营变好？">现金流真实吗？</button><button data-q="收入增长但利润下滑，发生了什么？">收入与利润背离</button><button data-q="现在估值是否合理？">估值是否合理</button></div></div>
+        <div class="answer" id="answer" aria-live="polite"></div>
+
+        <section class="section-head metrics-head"><div><span class="section-kicker">02 / MEASURE</span><h2>关键指标</h2></div><div class="period-switch" role="group" aria-label="报告期"><button class="selected" data-period="h1">2026 上半年</button><button data-period="fy">2025 全年</button></div></section>
+        <div class="metrics" id="metrics"></div>
+
+        <section class="section-head" id="evidence"><div><span class="section-kicker">03 / VERIFY</span><h2>证据如何支持判断</h2></div><span class="section-hint">点击卡片查看原始字段和出处</span></section>
+        <div class="legend"><span><i class="dot fact"></i>客观事实</span><span><i class="dot infer"></i>分析推断</span><span><i class="dot mixed"></i>矛盾信号</span><span><i class="dot unknown"></i>待验证</span></div>
+        <div class="evidence-grid" id="evidenceGrid"></div>
+
+        <section class="method" id="method"><div><span class="section-kicker">04 / METHOD</span><h2>方法与边界</h2></div><div class="method-grid"><div><strong>确定性计算</strong><p>同比变化、毛利率由财报原始字段计算；前端保留原始数值与公式。</p></div><div><strong>问题路由</strong><p>问题按主题词匹配证据。未命中的问题明确提示覆盖范围，不自动编造答案。</p></div><div><strong>解释层</strong><p>自然语言解释由 AI 协助起草，并逐条对照报告原文复核。线上 MVP 未接入实时大模型。</p></div><div><strong>数据边界</strong><p>仅使用 2026 半年报和 2025 年报。估值、股价、同行与动态事件暂未接入。</p></div></div></section>
+        <footer>证据罗盘 · 单股诊断 MVP　｜　数据来源：<a href="https://static.cninfo.com.cn/finalpage/2026-08-15/1225475868.PDF" target="_blank" rel="noopener">2026 半年度报告 ↗</a> · <a href="https://big5.sse.com.cn/site/cht/www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-04-17/600519_20260417_9QS4.pdf" target="_blank" rel="noopener">2025 年年度报告 ↗</a></footer>
+      </div>
+    </main>
+  </div>
+  <div class="drawer-backdrop" id="backdrop" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="证据详情" aria-hidden="true"><button class="close" id="closeDrawer" aria-label="关闭">×</button><div id="drawerBody"></div></aside>
+  <script src="./app.js"></script>
+</body>
+</html>
